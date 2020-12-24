@@ -1,0 +1,48 @@
+body {
+  font: normal 12px Arial, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.float-right {
+  float: right;
+}
+
+.page-break {
+  page-break-after: always;
+}
+
+.bottom-center {
+  text-align: center;
+  bottom: 10px;
+  position: fixed;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.bg-grey {
+  background-color: #D3D3D3;
+}
+
+/* @page {
+margin-top: 30px;
+margin-bottom: 30px;
+} */

@@ -38,16 +38,28 @@ Route::group(['middleware' => ['auth']], function () {
   // tabung => penyata kutipan
 
   // aset => daftar aset
+  Route::get('/aset', 'AsetController@index')->name('aset.index');
+  Route::post('/aset', 'AsetController@store')->name('aset.store');
+  Route::patch('/aset/{id}', 'AsetController@update')->name('aset.update');
+  Route::get('/aset/print', 'AsetController@print')->name('aset.print');
 
-  //
+  // tetapan - organisasi
+  Route::get('/tetapan/organisasi', 'TetapanController@indexOrganisasi')->name('tetapan.organisasi.index');
+  Route::patch('/tetapan/organisasi/{id}', 'TetapanController@updateOrganisasi')->name('tetapan.organisasi.update');
 
   // tetapan => akaun bank
+  Route::get('/tetapan/akaun-bank', 'TetapanController@indexBank')->name('tetapan.bank.index');
+  Route::post('/tetapan/akaun-bank', 'TetapanController@storeBank')->name('tetapan.bank.store');
+  Route::patch('/tetapan/akaun-bank/{id}', 'TetapanController@updateBank')->name('tetapan.bank.update');
 
   // tetapan => perihal kewangan
+  Route::get('/tetapan/perihal-kewangan', 'TetapanController@indexPerihal')->name('tetapan.perihal.index');
+  Route::post('/tetapan/perihal-kewangan', 'TetapanController@storePerihal')->name('tetapan.perihal.store');
+  Route::patch('/tetapan/perihal-kewangan/{id}', 'TetapanController@updatePerihal')->name('tetapan.perihal.update');
 
   // tetapan => pengguna
-  Route::get('/tetapan/pengguna', 'UserController@index')->name('tetapan.pengguna.index');
-  Route::post('/tetapan/pengguna', 'UserController@store')->name('tetapan.pengguna.store');
-  Route::patch('/tetapan/pengguna/kemaskini/{id}', 'UserController@update')->name('tetapan.pengguna.update');
-  Route::delete('/tetapan/pengguna/hapus/{id}', 'UserController@destroy')->name('tetapan.pengguna.delete');
+  Route::get('/pengguna-sistem', 'UserController@index')->name('tetapan.pengguna.index');
+  Route::post('/pengguna-sistem', 'UserController@store')->name('tetapan.pengguna.store');
+  Route::patch('/pengguna-sistem/kemaskini/{id}', 'UserController@update')->name('tetapan.pengguna.update');
+  Route::delete('/pengguna-sistem/hapus/{id}', 'UserController@destroy')->name('tetapan.pengguna.delete');
 });

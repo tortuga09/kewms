@@ -73,8 +73,8 @@
   <div class="sidebar-heading">
     Pengurusan Aset
   </div>
-  <li class="nav-item">
-    <a class="nav-link" href="#">
+  <li class="nav-item {{ (request()->is('aset')) ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('aset.index') }}">
       <i class="fas fa-fw fa-boxes"></i>
       <span>Daftar Aset</span>
     </a>
@@ -83,20 +83,21 @@
   <div class="sidebar-heading">
     Tetapan
   </div>
-  <li class="nav-item">
+  <li class="nav-item {{ (request()->is('tetapan/*')) ? 'active' : '' }}">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSistem" aria-expanded="true"
       aria-controls="collapsePage">
       <i class="fas fa-fw fa-cogs"></i>
       <span>Sistem</span>
     </a>
-    <div id="collapseSistem" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
+    <div id="collapseSistem" class="collapse {{ (request()->is('tetapan/*')) ? 'show' : '' }}" aria-labelledby="headingPage" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="#">Akaun Bank</a>
-        <a class="collapse-item" href="#">Perihal Kewangan</a>
+        <a class="collapse-item {{ (request()->is('tetapan/organisasi')) ? 'active' : '' }}" href="{{ route('tetapan.organisasi.index') }}">Organisasi</a>
+        <a class="collapse-item {{ (request()->is('tetapan/akaun-bank')) ? 'active' : '' }}" href="{{ route('tetapan.bank.index') }}">Akaun Bank</a>
+        <a class="collapse-item {{ (request()->is('tetapan/perihal-kewangan')) ? 'active' : '' }}" href="{{ route('tetapan.perihal.index') }}">Perihal Kewangan</a>
       </div>
     </div>
   </li>
-  <li class="nav-item {{ (request()->is('tetapan/pengguna')) ? 'active' : '' }}">
+  <li class="nav-item {{ (request()->is('pengguna*')) ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('tetapan.pengguna.index') }}">
       <i class="fas fa-fw fa-users-cog"></i>
       <span>Pengguna</span>

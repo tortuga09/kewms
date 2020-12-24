@@ -14,6 +14,8 @@
   <link href="{{ asset('theme') }}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="{{ asset('theme') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="{{ asset('theme') }}/css/ruang-admin.min.css" rel="stylesheet">
+  <!-- Bootstrap DatePicker -->
+  <link href="{{ asset('theme') }}/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" >
   @yield('css')
 </head>
 
@@ -56,6 +58,8 @@
   <script src="{{ asset('theme') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="{{ asset('theme') }}/vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="{{ asset('theme') }}/js/ruang-admin.min.js"></script>
+  <!-- Bootstrap Datepicker -->
+  <script src="{{ asset('theme') }}/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
   <script src="{{ asset('theme') }}/vendor/chart.js/Chart.min.js"></script>
   <script src="{{ asset('theme') }}/js/demo/chart-area-demo.js"></script>
   @yield('script')
