@@ -19,11 +19,12 @@
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTunai"
       aria-expanded="true" aria-controls="collapseBootstrap">
       <i class="fas fa-fw fa-hand-holding-usd"></i>
-      <span>Transaksi Tunai</span>
+      <span>Transaksi</span>
     </a>
     <div id="collapseTunai" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="#">Buku Tunai</a>
+        <a class="collapse-item" href="#">Tunai</a>
+        <a class="collapse-item" href="#">Bank</a>
       </div>
     </div>
   </li>
@@ -31,10 +32,11 @@
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBayaran" aria-expanded="true"
       aria-controls="collapseForm">
       <i class="fas fa-fw fa-receipt"></i>
-      <span>Bayaran</span>
+      <span>Terimaan / Bayaran</span>
     </a>
     <div id="collapseBayaran" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
+        <a class="collapse-item" href="#">Resit Terimaan</a>
         <a class="collapse-item" href="#">Baucer Bayaran</a>
       </div>
     </div>
@@ -56,16 +58,16 @@
   <div class="sidebar-heading">
     Pengurusan Tabung
   </div>
-  <li class="nav-item">
+  <li class="nav-item {{ (request()->is('tabung/*')) ? 'active' : '' }}">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTabung" aria-expanded="true"
       aria-controls="collapsePage">
       <i class="fas fa-fw fa-funnel-dollar"></i>
       <span>Kutipan Tabung</span>
     </a>
-    <div id="collapseTabung" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
+    <div id="collapseTabung" class="collapse {{ (request()->is('tabung/*')) ? 'show' : '' }}" aria-labelledby="headingPage" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="#">Borang Kutipan</a>
-        <a class="collapse-item" href="#">Penyata Kutipan</a>
+        <a class="collapse-item {{ (request()->is('tabung/borang*')) ? 'active' : '' }}" href="{{ route('tabung.kutipan.borang') }}">Borang Kutipan</a>
+        <a class="collapse-item {{ (request()->is('tabung/penyata*')) ? 'active' : '' }}" href="{{ route('tabung.kutipan.penyata') }}">Penyata Kutipan</a>
       </div>
     </div>
   </li>

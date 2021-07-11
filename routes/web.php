@@ -14,10 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+  $organisasi = App\Organisasi::count();
+  $admin = App\User::count();
+  if($organisasi == 0 || $admin == 0) {
+    return redirect()->route('install');
+  }
+  else {
     return view('welcome');
+  }
 });
 
 Auth::routes(['register' => false]);
+// install first time use
+Route::get('/install', 'InstallController@install')->name('install');
+Route::post('/install', 'InstallController@install_store')->name('install-store');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
@@ -34,8 +44,12 @@ Route::group(['middleware' => ['auth']], function () {
   // kewangan => penyata bank
 
   // tabung => borang kutipan
+  Route::get('/tabung/borang-kutipan', 'TabungController@borang')->name('tabung.kutipan.borang');
+  Route::post('/tabung/borang-kutipan', 'TabungController@simpan')->name('tabung.kutipan.simpan');
 
   // tabung => penyata kutipan
+  Route::get('/tabung/penyata-kutipan', 'TabungController@penyata')->name('tabung.kutipan.penyata');
+  Route::post('/tabung/penyata-kutipan', 'TabungController@tarikh')->name('tabung.kutipan.tarikh');
 
   // aset => daftar aset
   Route::get('/aset', 'AsetController@index')->name('aset.index');

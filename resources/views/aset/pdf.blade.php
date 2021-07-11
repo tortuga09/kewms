@@ -8,7 +8,7 @@
 <body>
   <strong>DAFTAR HARTA ALIH DAN HARTA TIDAK ALIH</strong>
   <br><br>
-  MASJID : ...
+  MASJID/SURAU : {{ $organisasi->nama_organisasi }}
   <br><br>
   <table border="1" width="100%">
     <tr>

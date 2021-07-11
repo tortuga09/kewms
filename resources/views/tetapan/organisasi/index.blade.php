@@ -18,7 +18,7 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                  <th>Nama Singkatan</th>
+                  <th>Kod Singkatan</th>
                   <th>Nama Organisasi</th>
                   <th>Alamat</th>
                   <th>No. Telefon</th>
@@ -38,7 +38,7 @@
                     {{ $organisasi->negeri }}
                   </td>
                   <td>{{ $organisasi->telefon }}</td>
-                  <td>{{ $organisasi->email }}</td>
+                  <td>{{ $organisasi->email_org }}</td>
                   <td>
                     <button type="button" class="btn btn-sm btn-outline-primary" title="Edit Maklumat" data-toggle="modal" data-target="#updateMaklumat-{{ $organisasi->id }}"><i class="far fa-edit"></i> Edit</button>
                     <!-- modal -->

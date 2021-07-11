@@ -1,5 +1,5 @@
 @php
-$copyYear = '2020';
+$copyYear = '2021';
 $curYear = date('Y')
 @endphp
 &copy; {{ $copyYear . (($copyYear != $curYear) ? '-' . $curYear : '')}} {{ config('app.name') }}

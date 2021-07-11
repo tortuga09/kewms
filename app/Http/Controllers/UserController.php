@@ -9,7 +9,7 @@ class UserController extends Controller
 {
   public function index()
   {
-    $users = User::where('name', '!=', 'Administrator')->get();
+    $users = User::where('role', '!=', 'Admin')->get();
     return view('tetapan.pengguna.index', compact('users'));
   }
 
@@ -21,6 +21,7 @@ class UserController extends Controller
 
     $data = $request->except('password');
     $data['password'] = bcrypt($request->input('password'));
+    $data['role'] = 'User';
 
     User::create($data);
 

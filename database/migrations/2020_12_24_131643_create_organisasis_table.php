@@ -24,7 +24,7 @@ class CreateOrganisasisTable extends Migration
             $table->string('bandar');
             $table->string('negeri');
             $table->string('telefon')->nullable();
-            $table->string('email')->nullable();
+            $table->string('email_org')->nullable();
             $table->timestamps();
         });
     }
