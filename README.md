@@ -24,7 +24,7 @@ Repo ini hanya untuk kegunaan peribadi sahaja.
     <li>Membuat tetapan pada fail .env dan wujudkan pangkalan data</li>
     <li>Update composer : <code>composer update</code></li>
     <li>Generate key : <code>php artisan key:generate</code></li>
-    <li>Laravel Seedind : <code>php artisan db:seed</code></li>
+    <li>Laravel Seeding : <code>php artisan db:seed</code></li>
     <li>Reload webserver/apache</li>
     <li>Siap! Terus guna/edit seperti biasa</li>
 </ul>
