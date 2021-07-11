@@ -37,19 +37,26 @@ Route::patch('/profil/kemaskini', 'HomeController@profilUpdate')->name('profil.u
 Route::group(['middleware' => ['auth']], function () {
   // kewangan => transaksi tunai
 
+  // kewangan => transaksi bank
+
+  // kewangan => resit rasmi
+
   // kewangan => baucer bayaran
 
-  // kewangan =>penyata tunai
+  // kewangan =>penyata kewangan
 
   // kewangan => penyata bank
 
   // tabung => borang kutipan
   Route::get('/tabung/borang-kutipan', 'TabungController@borang')->name('tabung.kutipan.borang');
   Route::post('/tabung/borang-kutipan', 'TabungController@simpan')->name('tabung.kutipan.simpan');
+  Route::get('/tabung/cetak-borang-kutipan/{id}', 'TabungController@cetak_borang')->name('tabung.kutipan.cetak.borang');
 
   // tabung => penyata kutipan
   Route::get('/tabung/penyata-kutipan', 'TabungController@penyata')->name('tabung.kutipan.penyata');
+  Route::get('/tabung/cetak-penyata-kutipan', 'TabungController@cetak_penyata')->name('tabung.kutipan.cetak.penyata');
   Route::post('/tabung/penyata-kutipan', 'TabungController@tarikh')->name('tabung.kutipan.tarikh');
+  Route::get('/tabung/cetak-penyata-tarikh', 'TabungController@cetak_tarikh')->name('tabung.kutipan.cetak.tarikh');
 
   // aset => daftar aset
   Route::get('/aset', 'AsetController@index')->name('aset.index');
@@ -57,7 +64,7 @@ Route::group(['middleware' => ['auth']], function () {
   Route::patch('/aset/{id}', 'AsetController@update')->name('aset.update');
   Route::get('/aset/print', 'AsetController@print')->name('aset.print');
 
-  // tetapan - organisasi
+  // tetapan => organisasi
   Route::get('/tetapan/organisasi', 'TetapanController@indexOrganisasi')->name('tetapan.organisasi.index');
   Route::patch('/tetapan/organisasi/{id}', 'TetapanController@updateOrganisasi')->name('tetapan.organisasi.update');
 

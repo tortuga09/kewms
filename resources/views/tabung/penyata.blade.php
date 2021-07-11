@@ -46,7 +46,7 @@
       <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between alert-light">
           <h6 class="m-0 font-weight-bold text-primary">Penyata Kutipan Tabung</h6>
-          <a href="#" class="btn btn-sm btn-secondary float-right" title="Cetak Penyata Kutipan"><i class="fas fa-print"></i> Cetak</a>
+          <a href="{{ route('tabung.kutipan.cetak.penyata') }}" target="_blank" class="btn btn-sm btn-secondary float-right" title="Cetak Penyata Kutipan"><i class="fas fa-print"></i> Cetak</a>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -68,7 +68,7 @@
                   <td class="text-right">{{ number_format($kutip->jumlah_besar, 2) }}</td>
                   <td>{{ $kutip->pegawai_1 }}<br>{{ $kutip->pegawai_2 }}<br>{{ $kutip->pegawai_3 }}</td>
                   <td>
-                    <a href="#" class="btn btn-sm btn-outline-primary" title="Cetak Penyata Kutipan"><i class="fas fa-print"></i> Cetak</a>
+                    <a href="{{ route('tabung.kutipan.cetak.borang', $kutip->id) }}" class="btn btn-sm btn-outline-primary" title="Cetak Borang Kutipan"><i class="fas fa-print"></i> Cetak</a>
                   </td>
                 </tr>
                 @endforeach

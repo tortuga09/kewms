@@ -138,7 +138,6 @@ class AsetController extends Controller
     $organisasi = Organisasi::first();
     $asets = Aset::orderBy('no_rujukan', 'asc')->get();
     $pdf = PDF::loadView('aset.pdf', compact('asets', 'organisasi'))->setPaper('a4', 'landscape');
-
     return $pdf->download('Senarai Aset.pdf');
   }
 }

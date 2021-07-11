@@ -82,6 +82,7 @@
     </a>
   </li>
   <hr class="sidebar-divider">
+  @if(Auth::user()->orle == 'Admin')
   <div class="sidebar-heading">
     Tetapan
   </div>
@@ -106,4 +107,5 @@
     </a>
   </li>
   <hr class="sidebar-divider">
+  @endif
 </ul>
